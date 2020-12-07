@@ -3,8 +3,10 @@ A Twitter bot that uses K-means distribution to evaluate the six dominant colour
 in the form of a palette of hexadecimal values
 
 #### Example
-**Original image** 
+**Original image**
+ 
 ![Original Tweet](img/tweet_original.jpg)
 
 **Art Palette** 
+
 ![Original Tweet](img/tweet_palette.jpg)
