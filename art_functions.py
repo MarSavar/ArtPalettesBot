@@ -11,12 +11,12 @@ def clamp(x):
     return max(0, min(int(x), 255))
 
 
-def get_random_work():
+def get_random_work(start, end):
     """
     Select a random work of art from Wikiart.
     Randint(x, y) selects a random page from the API.
     """
-    page = random.randint(2500, 2976)
+    page = random.randint(start, end)
     req = requests.get(f'{endpoint}?json=2&page={page}')
     res = json.loads(req.text)
     pick_one = random.randint(0, len(res['Paintings']) - 1)
@@ -66,7 +66,7 @@ def visualise_colours(cluster, centroids):
 
 def url_to_image(url):
     """
-    Convert url to image and continuoisly resize it if either the width or the height are greater than 1000.
+    Convert url to image and keep resizing it if either the width or the height are greater than 1000.
     """
     resp = urllib.request.urlopen(url)
     image = np.asarray(bytearray(resp.read()), dtype="uint8")

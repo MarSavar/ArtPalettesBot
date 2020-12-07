@@ -6,7 +6,7 @@ from twython import *
 
 if __name__ == "__main__":
     # Pick a random work of art from Wikiart
-    work = get_random_work()
+    work = get_random_work(2500, 2976)
 
     # Parse details
     img = parse_details(work)
@@ -35,7 +35,7 @@ if __name__ == "__main__":
                                           f'Hexadecimal values:\n{", ".join(codes)}.',
                                    media_ids=[response['media_id']])['id']
 
-    # Authenticate ArtPalettesBot's secondary account (comment)
+    # Authenticate ArtPalettesBot's secondary account (comment
     twitter = Twython(APP_KEY2, APP_SECRET2, OAUTH_TOKEN2, OAUTH_TOKEN_SECRET2)
     original = urllib.request.urlretrieve(image2, "tweet_original.jpg")
 
