@@ -4,7 +4,8 @@ from consts import *
 from sklearn.cluster import KMeans
 from twython import *
 
-if __name__ == "__main__":
+
+def main():
     # Pick a random work of art from Wikiart
     work = get_random_work(2500, 2976)
 
@@ -45,3 +46,7 @@ if __name__ == "__main__":
         print(twitter.update_status(status=f'@ArtPalettesBot Original artwork',
                                     in_reply_to_status_id=get_id,
                                     media_ids=[response['media_id']]))
+
+
+if __name__ == "__main__":
+    main()
